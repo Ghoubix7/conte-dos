@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perfil • Assinaturas</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '860586806429399');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=860586806429399&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f6f6;
+  color: #111;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* ================= TOPO (SEM DIVISÕES) ================= */
+
+/* PROMO BAR */
+.promo-bar {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 8px;
+  letter-spacing: 0.2px;
+  border: none;
+}
+
+#timer {
+  font-weight: 700;
+  color: #ff3b3b;
+}
+
+/* HEADER PRIVACY */
+.privacy-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 10px 0;
+  border: none;
+}
+
+.privacy-header img {
+  height: 28px;
+  width: 250px;
+  object-fit: contain;
+}
+
+/* CAPA */
+.cover {
+  height: 240px;
+  overflow: hidden;
+  border-radius: 0 0 12px 12px;
+  margin-top: -2px;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= PERFIL ================= */
+
+.profile {
+  padding: 0 16px;
+  position: relative;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  position: absolute;
+  top: -42px;
+  left: 16px;
+  background: #ccc;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding-top: 52px;
+}
+
+.profile-info h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+}
+
+.bio {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* ================= ASSINATURAS ================= */
+
+.card {
+  background: #fff;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+/* LINKS */
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* PLANOS */
+.plan {
+  background: #fff5ee;
+  border: 2px solid #ff7a18;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.plan small {
+  font-size: 12px;
+  font-weight: 600;
+  color: #b13a00;
+}
+
+/* DESTAQUE */
+.plan.destaque {
+  background: linear-gradient(135deg, #e60023, #b3001b);
+  color: #fff;
+  border: 2px solid #8b0014;
+  position: relative;
+  box-shadow: 0 5px 14px rgba(230,0,35,0.45);
+}
+
+.plan.destaque small {
+  color: #ffeaea;
+}
+
+.plan.destaque::before {
+  content: "MAIS VANTAJOSO 🔥";
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+/* ================= POSTS ================= */
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+.tab.active {
+  background: #fff;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  padding: 12px;
+}
+
+.post {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px);
+  transform: scale(1.05);
+}
+
+.lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+}
+
+.actions {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  margin: 24px 16px;
+  background: linear-gradient(135deg, #d60000, #ff1e1e);
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(214, 0, 0, 0.45);
+  transition: all 0.25s ease;
+  animation: ctaPulse 1.6s infinite;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 22px rgba(214, 0, 0, 0.65);
+}
+
+@keyframes ctaPulse {
+  0% { box-shadow: 0 0 0 rgba(255, 30, 30, 0.6); }
+  50% { box-shadow: 0 0 18px rgba(255, 30, 30, 0.9); }
+  100% { box-shadow: 0 0 0 rgba(255, 30, 30, 0.6); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="promo-bar">
+ESSA PROMOÇÃO É VÁLIDA POR <span id="timer">15:00</span>
+</div>
+
+<div class="privacy-header">
+  <img src="assets/img/privacy-logo.jpg" alt="Privacy">
+  <span></span>
+</div>
+
+<div class="container">
+
+<!-- CAPA -->
+<div class="cover">
+  <img src="assets/img/fotocapa2.jpg">
+</div>  
+
+<!-- PERFIL -->
+<div class="profile">
+  <div class="avatar">
+    <img src="assets/img/fotoPerfil.jpg">
+  </div>
+
+  <div class="profile-info">
+    <h1>Larah G Goncalves</h1>
+    <div class="stats">372 📸 • 420 📹 • 187K ❤ </div>
+
+    <div class="bio">
+    Meu amor… não adianta resistir, eu sei que você quer… e eu tô aqui só pra te deixar maluco. 🔥😈 Por um valorzinho que nem dói… você vai ter acesso total ao meu lado mais safado e proibido. São mais de 700 fotos e vídeos, me mostrando como você nunca viu… peladinha, provocando, brincando… me tocando… só pra deixar a sua imaginação no talo. 💋💦 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou… e olha… não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 👀😏 Não fica só se masturbando com a imaginação, bebê… vem ter o conteúdo real, vem sentir o meu tesão de perto. Porque aqui… eu tô pronta pra te provocar, te deixar louco… e te fazer gozar só de me ver. 🍑💦
+    </div>
+  </div>
+</div>
+
+<!-- ASSINATURAS -->
+<div class="card">
+  <h2 class="assinaturas-titulo">Assinaturas</h2>
+
+  <a href="https://p.hoopay.com.br/v/8c45a69b-3241-4748-b085-813581f0b0db" class="checkout">
+    <div class="plan">
+      <span>30 DIAS</span>
+      <strong>R$ 14,90</strong>
+    </div>
+  </a>
+
+  <a href="https://p.hoopay.com.br/v/16963c14-2982-49ff-968c-be7d12d167c0" class="checkout">
+    <div class="plan destaque">
+      <span>3 MESES</span>
+      <strong>R$ 24,90</strong>
+    </div>
+  </a>
+
+  <a href="https://p.hoopay.com.br/v/9a78e7cc-7e16-4f09-a146-0d2d6b5f76f5" class="checkout">
+    <div class="plan">
+      <span>1 ANO</span>
+      <strong>R$ 39,90</strong>
+    </div>
+  </a>
+</div>
+
+<!-- POSTS -->
+<div class="tabs">
+<div class="tab active">22 vídeos ao vivo</div>
+<div class="tab">792 mídias</div>
+</div>
+
+<div class="grid">
+<div class="post"><img src="assets/img/pvd1.jpg"><div class="lock">🔒</div><div class="actions">♡ 2145 💬 361</div></div>
+<div class="post"><img src="assets/img/am2.jpeg"><div class="lock">🔒</div><div class="actions">♡ 1683 💬 250</div></div>
+<div class="post"><img src="assets/img/pvd8.jpg"><div class="lock">🔒</div><div class="actions">♡ 901 💬 142</div></div>
+<div class="post"><img src="assets/img/pvd 9.jpg"><div class="lock">🔒</div><div class="actions">♡ 1458 💬 222</div></div>
+</div>
+
+<a href="https://p.hoopay.com.br/v/048c2ee7-e662-463c-99c2-4bc572bb68c7" class="checkout" style="text-decoration:none; color:inherit;">
+<div class="cta">ACESSO VITALÍCIO POR APENAS R$ 49,90</div>
+</a>
+
+</div>
+
+<script>
+let tempo = 15 * 60;
+const timerEl = document.getElementById("timer");
+
+function atualizarTimer() {
+  const minutos = Mathsfloor(tempo / 60);
+  const segundos = tempo % 60;
+  timerEl.textContent =
+    String(minutos).padStart(2, "0") + ":" +
+    String(segundos).padStart(2, "0");
+
+  if (tempo > 0) {
+    tempo--;
+  }
+}
+
+setInterval(atualizarTimer, 1000);
+
+/* INITIATE CHECKOUT */
+document.querySelectorAll('.checkout').forEach(el => {
+  el.addEventListener('click', () => {
+    fbq('track', 'InitiateCheckout');
+  });
+});
+</script>
+
+</body>
+</html>
