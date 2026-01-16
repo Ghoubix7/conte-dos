@@ -388,12 +388,14 @@ ESSA PROMOÇÃO É VÁLIDA POR <span id="timer">15:00</span>
 </div>
 
 <script>
-let tempo = 15 * 60;
+  
+let tempo = 15 * 60; // 15 minutos
 const timerEl = document.getElementById("timer");
 
 function atualizarTimer() {
-  const minutos = Mathsfloor( 15 * 60);
+  const minutos = Math.floor(tempo / 60);
   const segundos = tempo % 60;
+
   timerEl.textContent =
     String(minutos).padStart(2, "0") + ":" +
     String(segundos).padStart(2, "0");
@@ -403,6 +405,7 @@ function atualizarTimer() {
   }
 }
 
+atualizarTimer(); // inicia já mostrando o tempo
 setInterval(atualizarTimer, 1000);
 
 /* INITIATE CHECKOUT */
@@ -416,5 +419,6 @@ document.querySelectorAll('.checkout').forEach(el => {
 </body>
 
 </html>a
+
 
 
