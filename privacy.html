@@ -18,7 +18,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 
 fbq('init', '1128387269225002');
 fbq('track', 'PageView');
-fbq('track', 'Lead');
 </script>
 
 <noscript>
@@ -411,14 +410,28 @@ setInterval(atualizarTimer, 1000);
 /* INITIATE CHECKOUT */
 document.querySelectorAll('.checkout').forEach(el => {
   el.addEventListener('click', () => {
-    fbq('track', 'InitiateCheckout');
+
+    let valor = 0;
+
+    if (el.href.includes('71e8c329')) valor = 12.90; // 30 dias
+    if (el.href.includes('f6d7fed8')) valor = 17.90; // 3 meses
+    if (el.href.includes('7fbcf038')) valor = 19.90; // 1 ano
+    if (el.href.includes('0ca0224e')) valor = 24.90; // vitalício
+
+    fbq('track', 'InitiateCheckout', {
+      value: valor,
+      currency: 'BRL'
+    });
+
   });
 });
+
 </script>
 
 </body>
 
 </html>a
+
 
 
 
