@@ -392,7 +392,7 @@ let tempo = 15 * 60;
 const timerEl = document.getElementById("timer");
 
 function atualizarTimer() {
-  const minutos = Mathsfloor(tempo / 60);
+  const minutos = Mathsfloor( 15 * 60);
   const segundos = tempo % 60;
   timerEl.textContent =
     String(minutos).padStart(2, "0") + ":" +
@@ -416,4 +416,5 @@ document.querySelectorAll('.checkout').forEach(el => {
 </body>
 
 </html>a
+
 
