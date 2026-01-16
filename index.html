@@ -18,10 +18,6 @@
 
     fbq('init', '1128387269225002');
     fbq('track', 'PageView');
-
-    function enviarEvento(evento) {
-      fbq('track', evento);
-    }
   </script>
 
   <style>
@@ -38,16 +34,16 @@
       min-height: 100vh;
     }
 
-.foto-topo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: center 45%; /* afasta o zoom */
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 20px rgba(255,255,255,0.25);
-}
-    
+    .foto-topo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      object-position: center 45%;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.25);
+      box-shadow: 0 0 20px rgba(255,255,255,0.25);
+    }
+
     h1 {
       font-size: 2.3rem;
       margin-bottom: 14px;
@@ -60,7 +56,6 @@
       max-width: 90%;
     }
 
-    /* BOTÕES BASE */
     .btn {
       display: flex;
       align-items: center;
@@ -71,6 +66,7 @@
       border-radius: 18px;
       text-decoration: none;
       transition: all 0.35s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -79,7 +75,6 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
 
-    /* BOTÃO PRÉVIAS */
     .btn-preview {
       background: linear-gradient(90deg, #0088cc, #00bfff);
       color: #fff;
@@ -92,20 +87,18 @@
       height: 26px;
     }
 
-    /* BOTÃO PRIVACY (PERFEITO) */
     .btn-privacy {
       background: #df583edc;
     }
 
     .btn-privacy img {
-      width: 250px;        /* tamanho ideal da logo */
+      width: 250px;
       height: auto;
       object-fit: contain;
-      margin-top: 22px;     /* desce levemente */
+      margin-top: 22px;
       display: block;
     }
 
-    /* SOCIAIS */
     .social-links {
       display: flex;
       gap: 26px;
@@ -156,48 +149,52 @@
   <h1>🔥 Meus Conteúdos 🔥</h1>
   <p>Entre no grupo de prévias e garanta acesso ao meu conteúdo exclusivo.</p>
 
+  <!-- BOTÃO TELEGRAM (LEAD APÓS 5s) -->
   <a href="https://bot.mybotexpress.com/f59a6001-077f-48a1-b11f-9f82911e0ecd"
      class="btn btn-preview"
-     onclick="enviarEvento('Lead');"
-     target="_blank">
+     target="_blank"
+     onclick="leadComDelay(this.href)">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
     Meu grupinho de Prévias
   </a>
 
+  <!-- BOTÃO PRIVACY (LEAD APÓS 5s) -->
   <a href="privacy.html"
      class="btn btn-privacy"
-     onclick="enviarEvento('Lead');"
-     target="_blank">
+     target="_blank"
+     onclick="leadComDelay(this.href)">
     <img src="./assets/img/logo_laranja_com_letra_branca_.png" alt="Privacy">
   </a>
 
+  <!-- REDES SOCIAIS (CONTACT) -->
   <div class="social-links">
     <a href="https://www.instagram.com/larah.goncalves69/"
        class="social-btn instagram"
        target="_blank"
-       onclick="enviarEvento('ViewContent');">
+       onclick="fbq('track','Contact')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
     </a>
 
     <a href="https://www.facebook.com/profile.php?id=61586476022564"
        class="social-btn facebook"
        target="_blank"
-       onclick="enviarEvento('ViewContent');">
+       onclick="fbq('track','Contact')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg">
     </a>
   </div>
 
   <footer>© 2024 | Meus Conteúdos</footer>
 
+  <!-- SCRIPT LEAD QUALIFICADO -->
+  <script>
+    function leadComDelay(url) {
+      setTimeout(function () {
+        fbq('track', 'Lead');
+      }, 5000);
+
+      window.open(url, '_blank');
+    }
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
