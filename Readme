@@ -1,3 +1,10 @@
+
+
+.social-btn.facebook {
+      background: linear-gradient(135deg, #1877f2, #0f5bd8);
+
+
+
 <a href="https://www.facebook.com/profile.php?id=61586476022564"
        class="social-btn facebook"
        target="_blank"
